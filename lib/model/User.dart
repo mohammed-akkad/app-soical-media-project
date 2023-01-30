@@ -11,7 +11,7 @@ class Users {
   String? content;
   String? date;
   String? comment;
-  int? like;
+  bool? like;
 
   Users({
     this.id,
@@ -24,6 +24,7 @@ class Users {
     this.content,
     this.image,
     this.date,
+    this.like,
   });
 
   toJson() {

@@ -83,7 +83,7 @@ class FirebaseAuthHelper {
     final String idUser = auth.currentUser!.uid.toString();
 
     try {
-      await firestore.collection('Posts').doc(idPost).set({
+      await firestore.collection('Posts').doc().set({
         "id": idUser,
         "id_post": users.id_post,
         "lastName":users.lastName,
@@ -91,10 +91,26 @@ class FirebaseAuthHelper {
         "image":users.image,
         "content":users.content,
         "date":users.date,
+        "like":users.like,
 
       });
     } catch (e) {}
   }
+ static createLike(Users users) async {
+
+
+   FirebaseFirestore firestore = FirebaseFirestore.instance;
+   final String idUser = auth.currentUser!.uid.toString();
+
+   try {
+     await firestore.collection('Likes').doc(idPost).set({
+       "id": idUser,
+       "id_post": users.id_post,
+       "like":users.like,
+
+     });
+   } catch (e) {}
+ }
 
   void msg(String msg) {
     Fluttertoast.showToast(

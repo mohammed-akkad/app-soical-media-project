@@ -6,6 +6,7 @@ class Posts extends Users {
   String? date;
   String? image;
   String? UserName;
+  bool? isLike;
 
 
 
@@ -15,6 +16,7 @@ class Posts extends Users {
     this.content,
     this.image,
     this.UserName,
+    this.isLike,
 
     // this.date,
 

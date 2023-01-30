@@ -45,6 +45,23 @@ class FirebaseFireStoreHelperPost {
     });
 
   }
+
+  Future<void> deletePosts(String id) {
+    return firestore.collection('Posts').doc(id).delete();
+  }
+  Stream<QuerySnapshot> getBooks() {
+    return firestore.collection('Posts').snapshots();
+  }
+
+
+  Future SaveUserLike(Users users) async {
+    await firestore.collection(postCollection).doc().update({
+
+      "like":users.like,
+
+    });
+
+  }
    Future<QuerySnapshot<Map<String, dynamic>>> getAllPosts() async {
 
     final QuerySnapshot<Map<String, dynamic>> allUser =

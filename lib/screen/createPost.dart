@@ -20,6 +20,7 @@ class _CreatePostState extends State<CreatePost> {
   String lastName = '';
   String userName = '';
   String ImageUrl = '';
+
   Color color = Colors.grey;
   TextEditingController postControler = TextEditingController();
   var isDisable = true;
@@ -181,7 +182,9 @@ class _CreatePostState extends State<CreatePost> {
             image: image,
             firstName: firstName,
         lastName: lastName,
-          date: formateDate
+          date: formateDate,
+          like: false
+
         ));
       }
     });
